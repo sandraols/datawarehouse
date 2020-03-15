@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    font-size: 0;
+}
+
+$text-color: #4B5D68;
+$titles-color: #212353;
+$primary-color: #9C69E2;
+$secondary-color: #F063B8;
+$light-color: #ffffff;
+$accent-color: #68C9BA;
+
+$title-font: helvetica, sans-serif;
+$text-font: 'Lato', sans-serif;
+
+%title-bold {
+    font-family: $title-font;
+    color: $titles-color;
+    font-weight: 700;
+}
+
+%subtitle {
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 130%;
+}
+
+%paragraph {
+    font-family: $text-font;
+    font-weight: 400;
+    color: $text-color;
+    line-height: 160%;
+    font-size: 18px;
+}
+
+%button {
+    font-family: $text-font;
+    height: 60px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+%button-light {
+    @extend %button;
+    color: $titles-color;
+    width: 210px;
+    font-size: 16px;
+    box-shadow: 0px 5px 5px rgba(75, 93, 104, 0.1);
+}
+
+%button-purple {
+    @extend %button;
+    color: $light-color;
+    background-color: $primary-color;
+    width: 170px;
+    font-size: 18px;
+}
+
+@mixin title($font) {
+    @extend %title-bold;
+    font-size: $font;
+}
+// .title1 {
+//     @extend %title-bold;
+//     font-size: 17px;
+// }
+
+// .title2 {
+//     @extend %title-bold;
+//     font-size: 14px;
+// }
+
+// .title1 {
+//     @include title(27px);
+// }
+
+// .title2 {
+//     @include title(14px);
+// }
+
+body {
+    background: linear-gradient(180deg, #F6FAFD 0%, #FFFFFF 19.4%) no-repeat;
+    background-size: cover;
+}
+
+/*--------------------------------*/
+/* HEADER */
+/*-------------------------------*/
+
+.header {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    max-width: 100vw; 
+}
+
+/*---------- NAVIGATION ----------*/
+
+.navigation {
+    display: flex;
+    width: 75vw;
+    max-width: 1120px;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+
+    &__list {
+        width: 45vw;
+        max-width: 450px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        margin-right: 5vw;
+    }
+
+    li &__link {
+        color: $text-color;
+        font-family: $text-font;
+        text-decoration: none;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        margin-right: 5px;
+        transition: .2s;
+        display: inline-block;
+    }
+
+    &__link:hover {
+        font-weight: 700;
+        color: $titles-color;
+    }
+
+    &__link::before {
+        display: block;
+        content: attr(title);
+        font-weight: 700;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+    }
+
+    .button--light {
+        @extend %button-light;
+    }
+
+    .button__icon {
+        margin-left: 2vw;
+    }
+}
+
+/*--------------------------------*/
+/* INTRO */
+/*-------------------------------*/
+
+.intro {
+    width: 68vw;
+    max-width: 1248px;
+    height: 74vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    &__information {
+        width: 45vw;
+        height: 50vh;
+        max-height: 464px;
+        position: absolute;
+        z-index: 1;
+    }
+    
+    &__title {
+        @extend %title-bold;
+        width: 50vw;
+        max-width: 645px;
+        // font-size: 80px;
+        font-size: 6vw;
+        line-height: 110%;
+        margin-bottom: 50px;
+    }
+
+    &__paragraph {
+        @extend %paragraph;
+        width: 70vw;
+        max-width: 410px;
+        margin-bottom: 7vh;
+    }
+
+    &__img {
+        width: 55vw;
+        max-width: 885px;
+        height: auto;
+        position: relative;
+        top: 20vh;
+        left: 34vw;
+    }
+
+    .button--purple {
+        @extend %button-purple;
+    }
+}
+
+/*--------------------------------*/
+/* SECOND SECTION */
+/*-------------------------------*/
+
+.second-section {
+    height: 100vh;
+    min-height: 100vh;
+    width: 100vw;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+        width: 75vw;
+        height: 70vh;
+        background-color: rgba(240, 99, 184, .15);
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__img {
+        width: 35vw;
+        max-width: 477px;
+        margin-right: 3vw;
+    }
+
+    &__information {
+        width: 30vw;
+        max-width: 475px;
+        height: 310px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__title {
+        @extend %title-bold;
+        font-size: 40px;
+        font-size: 2.5em;
+        line-height: 130%;
+    }
+
+    &__paragraph {
+        @extend %paragraph;
+        margin-top: 40px;
+    }
+}
