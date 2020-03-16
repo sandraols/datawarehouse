@@ -27,11 +27,19 @@ $text-font: 'Lato', sans-serif;
 }
 
 %subtitle {
-    font-family: Helvetica;
-    font-style: normal;
-    font-weight: bold;
+    @extend %title-bold;
     font-size: 40px;
+    font-size: 2.5em;
     line-height: 130%;
+}
+
+%features-title {
+    font-family: $title-font;
+    color: $titles-color;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    margin-bottom: 20px;
 }
 
 %paragraph {
@@ -41,6 +49,8 @@ $text-font: 'Lato', sans-serif;
     line-height: 160%;
     font-size: 18px;
 }
+
+
 
 %button {
     font-family: $text-font;
@@ -114,7 +124,7 @@ body {
 
 .navigation {
     display: flex;
-    width: 75vw;
+    width: 80vw;
     max-width: 1120px;
     height: 60px;
     justify-content: space-between;
@@ -172,7 +182,7 @@ body {
 /*-------------------------------*/
 
 .intro {
-    width: 68vw;
+    width: 64vw;
     max-width: 1248px;
     height: 74vh;
     display: flex;
@@ -224,17 +234,17 @@ body {
 /*-------------------------------*/
 
 .second-section {
-    height: 100vh;
+    height: 110vh;
     min-height: 100vh;
     width: 100vw;
-    margin-top: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
 
     &__container {
-        width: 75vw;
-        height: 70vh;
+        width: 80vw;
+        height: 75vh;
+        max-height: 560px;
         background-color: rgba(240, 99, 184, .15);
         border-radius: 50px;
         display: flex;
@@ -248,7 +258,7 @@ body {
     }
 
     &__information {
-        width: 30vw;
+        width: 38vw;
         max-width: 475px;
         height: 310px;
         display: flex;
@@ -258,14 +268,132 @@ body {
     }
 
     &__title {
-        @extend %title-bold;
-        font-size: 40px;
-        font-size: 2.5em;
-        line-height: 130%;
+        @extend %subtitle;
     }
 
     &__paragraph {
         @extend %paragraph;
         margin-top: 40px;
+    }
+}
+
+/*--------------------------------*/
+/* FEATURES */
+/*-------------------------------*/
+
+.features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5vw;
+
+    &__title {
+        @extend %subtitle;
+        margin-bottom: 50px;
+    }
+
+    &__paragraph {
+        @extend %paragraph;
+        text-align: center;
+        width: 45vw;
+        max-width: 584px;
+        margin-bottom: 7vh;
+    }
+
+    &__box-container {
+        width: 80vw;
+        max-width: 80vw;
+        height: 104vh;
+        min-height: 104vh;
+        margin-top: 5vh;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+        justify-content: space-around;
+    }
+
+    &__box {
+        width: 30vw;
+        width: 400px;
+        max-width: 558px;
+        height: auto;
+        max-height: 358px;
+        margin-left: 30px;
+        padding: 30px 0 20px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        justify-items: space-between;
+        position: relative;
+    }
+    
+    &__box__background {
+        width: 400px;
+        position: absolute;
+        z-index: -1;
+    }
+    
+    &__box__background.purple--background {
+        position: absolute;
+        top: 30px;
+        display: block;
+    }
+
+    &__box:nth-of-type(2) {
+        margin-top: 6px;
+    }
+    
+    &__box__img {
+        position: absolute;
+        top: 25%;
+        left: -25%;
+        width: 55%;
+        max-width: 232px;
+        display: block;
+    }
+
+    &__box__text {
+        padding-right: 3vw;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+    }
+    
+    &__box__title {
+        @extend %features-title;
+    }
+    
+    &__box__paragraph {
+        @extend %paragraph;
+        width: 220px;
+        min-height: 160px;
+        font-size: 16px;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+    
+    &__box__link {
+        @extend %paragraph;
+        color: $titles-color;
+        font-size: 16px;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        margin-bottom: 2vh;
+    }
+        
+    .arrow {
+        margin-left: 20px;
+    }                      
+}
+
+
+
+@media screen and (max-width: 1074px) {
+    
+    .features__box:nth-of-type(3) {
+        margin-top: 12px;
     }
 }
