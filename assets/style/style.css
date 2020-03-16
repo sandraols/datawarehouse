@@ -10,13 +10,13 @@ li {
   font-size: 0;
 }
 
-.intro__title, .features__title, .second-section__title {
+.intro__title, .testimonials__title, .features__title, .second-section__title {
   font-family: helvetica, sans-serif;
   color: #212353;
   font-weight: 700;
 }
 
-.features__title, .second-section__title {
+.testimonials__title, .features__title, .second-section__title {
   font-size: 40px;
   font-size: 2.5em;
   line-height: 130%;
@@ -31,7 +31,7 @@ li {
   margin-bottom: 20px;
 }
 
-.features__box__link, .features__box__paragraph, .features__paragraph, .second-section__paragraph, .intro__paragraph {
+.testimonials__content__paragraph, .features__box__link, .features__box__paragraph, .features__paragraph, .second-section__paragraph, .intro__paragraph {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   color: #4B5D68;
@@ -212,7 +212,7 @@ li .navigation__link {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 5vw;
+  margin-left: 4vw;
 }
 .features__title {
   margin-bottom: 50px;
@@ -224,11 +224,11 @@ li .navigation__link {
   margin-bottom: 7vh;
 }
 .features__box-container {
-  width: 80vw;
-  max-width: 80vw;
-  height: 104vh;
-  min-height: 104vh;
-  margin-top: 5vh;
+  width: 85vw;
+  max-width: 85vw;
+  height: 105vh;
+  min-height: 105vh;
+  margin-top: 2vh;
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
@@ -238,14 +238,12 @@ li .navigation__link {
   width: 30vw;
   width: 400px;
   max-width: 558px;
-  height: auto;
-  max-height: 358px;
-  margin-left: 30px;
+  max-height: 366px;
+  margin-left: 16px;
   padding: 30px 0 20px 0px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-end;
-  justify-items: space-between;
   position: relative;
 }
 .features__box__background {
@@ -255,8 +253,7 @@ li .navigation__link {
 }
 .features__box__background.purple--background {
   position: absolute;
-  top: 30px;
-  display: block;
+  top: 16px;
 }
 .features__box:nth-of-type(2) {
   margin-top: 6px;
@@ -267,7 +264,6 @@ li .navigation__link {
   left: -25%;
   width: 55%;
   max-width: 232px;
-  display: block;
 }
 .features__box__text {
   padding-right: 3vw;
@@ -278,7 +274,8 @@ li .navigation__link {
 }
 .features__box__paragraph {
   width: 220px;
-  min-height: 160px;
+  height: 150px;
+  min-height: 100px;
   font-size: 16px;
   font-weight: 300;
   margin-bottom: 20px;
@@ -290,15 +287,103 @@ li .navigation__link {
   display: flex;
   align-items: center;
   text-decoration: none;
-  margin-bottom: 2vh;
+  margin-bottom: 3vh;
 }
 .features .arrow {
   margin-left: 20px;
+  margin-top: 3px;
 }
 
-@media screen and (max-width: 1074px) {
+.lower--img {
+  top: 36%;
+}
+
+/*--------------------------------*/
+/* TESTIMONIALS */
+/*-------------------------------*/
+.testimonials {
+  height: 110vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.testimonials__container {
+  width: 80vw;
+  height: 80vh;
+  max-height: 709px;
+  background-color: #9C69E2;
+  border-radius: 50px;
+}
+.testimonials__title {
+  color: #ffffff;
+  padding: 8% 0 0 8%;
+}
+.testimonials__content-wrapper {
+  width: 100%;
+  height: 76%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.testimonials__content-container {
+  background: #ffffff;
+  width: 55%;
+  height: 65%;
+  max-width: 645px;
+  max-height: 330px;
+  border-radius: 20px;
+  box-shadow: 0px 20px 0px rgba(60, 28, 99, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.testimonials__content {
+  padding: 35px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.testimonials__content__img {
+  align-self: flex-start;
+}
+.testimonials__content__text {
+  width: 76%;
+  max-width: 385px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.testimonials__content__title {
+  font-family: "Lato", sans-serif;
+  color: #212353;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 160%;
+}
+.testimonials__content__link {
+  font-family: "Lato", sans-serif;
+  color: #9C69E2;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 160%;
+}
+.testimonials__content__paragraph {
+  line-height: 180%;
+  margin-top: 20px;
+}
+
+/*--------------------------------*/
+/* MEDIA QUERIES */
+/*-------------------------------*/
+@media screen and (max-width: 978px) {
   .features__box:nth-of-type(3) {
-    margin-top: 12px;
+    margin-top: 8px;
+  }
+
+  .features__box-container {
+    height: 205vh;
   }
 }
 
