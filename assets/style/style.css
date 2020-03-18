@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-li {
-  list-style: none;
-}
-
 .intro__title, .footer__bottom__left-title, .footer__title, .testimonials__title, .features__title, .second-section__title {
   font-family: helvetica, sans-serif;
   color: #212353;
@@ -29,7 +25,7 @@ li {
   margin-bottom: 20px;
 }
 
-.footer__paragraph, .testimonials__content__paragraph, .features__box__link, .features__box__paragraph, .features__paragraph, .second-section__paragraph, .intro__paragraph {
+.features__box__link, .features__box__paragraph, .paragraph {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   color: #4B5D68;
@@ -114,6 +110,12 @@ body {
 .navigation__logo {
   margin-right: 5vw;
 }
+li {
+  list-style: none;
+  display: inline-block;
+  font-size: 0;
+}
+
 li .navigation__link {
   color: #4B5D68;
   font-family: "Lato", sans-serif;
@@ -125,10 +127,26 @@ li .navigation__link {
   font-weight: 400;
   display: inline-block;
 }
+
 .navigation__link:hover {
   font-weight: 700;
   color: #212353;
 }
+
+.navigation__link::before {
+  display: block;
+  content: attr(title);
+  font-weight: 700;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.navigation__link::after {
+  margin-top: -1px;
+  font-size: 0;
+}
+
 /*--------------------------------*/
 /* INTRO */
 /*-------------------------------*/
@@ -203,8 +221,8 @@ li .navigation__link {
   align-items: center;
   justify-content: center;
 }
-.second-section__paragraph {
-  margin-top: 4vh;
+.second-section__title {
+  margin-bottom: 4vh;
 }
 
 /*--------------------------------*/
@@ -582,6 +600,10 @@ svg:hover {
   }
 }
 @media screen and (max-width: 414px) {
+  .paragraph {
+    font-size: 1em;
+  }
+
   .intro__information {
     height: 63vh;
   }
@@ -591,16 +613,8 @@ svg:hover {
     margin-bottom: 5vh;
   }
 
-  .intro__paragraph {
-    font-size: 1em;
-  }
-
   .intro__img {
     top: 23vh;
-  }
-
-  .second-section__paragraph {
-    font-size: 1em;
   }
 
   .second-section__img-container {
@@ -614,7 +628,6 @@ svg:hover {
   }
 
   .features__paragraph {
-    font-size: 1em;
     margin-bottom: 0px;
   }
 
@@ -653,7 +666,6 @@ svg:hover {
   }
 
   .testimonials__content__paragraph {
-    font-size: 1em;
     line-height: 160%;
   }
 
@@ -681,10 +693,6 @@ svg:hover {
 
   .footer__title {
     font-size: 2em;
-  }
-
-  .footer__paragraph {
-    font-size: 1em;
   }
 
   .footer__top--buttons .button--light {
