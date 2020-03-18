@@ -4,12 +4,6 @@
     box-sizing: border-box;
 }
 
-// li {
-//     list-style: none;
-//     display: inline-block;
-//     font-size: 0;
-// }
-
 $text-color: #4B5D68;
 $titles-color: #212353;
 $primary-color: #9C69E2;
@@ -98,18 +92,27 @@ button:hover {
     transform: scale(1.1);
 }
 
-// @mixin title($font) {
-//     @extend %title-bold;
-//     font-size: $font;
-// }
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+}
 
-// .title1 {
-//     @include title(27px);
-// }
+@mixin justify-align($justify, $align) {
+    justify-content: $justify;
+    align-items: $align;
+}
 
-// .title2 {
-//     @include title(14px);
-// }
+@mixin flex-with-direction($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    @include flex($justify, $align);
+}
+
+@mixin flex($justify, $align) {
+    display: flex;
+    @include justify-align($justify, $align);
+}
 
 body {
     background: linear-gradient(180deg, #F6FAFD 0%, #FFFFFF 19.4%) no-repeat;
@@ -126,11 +129,7 @@ body {
 
 .header {
     margin-top: 5vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // width: 100vw;
-    // max-width: 100vw; 
+    @include flex-with-direction(column, flex-start, center); 
 }
 
 /*---------- NAVIGATION ----------*/
@@ -144,9 +143,7 @@ body {
     &__list {
         width: 45vw;
         max-width: 450px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex(space-between, center);
     }
 
     &__logo {
@@ -194,10 +191,10 @@ li .navigation__link {
     visibility: hidden;
 }
 
-.navigation__link::after {
-    margin-top: -1px;
-    font-size: 0;
-}
+// .navigation__link::after {
+//     margin-top: -1px;
+//     font-size: 0;
+// }
 
 
 /*--------------------------------*/
@@ -208,10 +205,7 @@ li .navigation__link {
     width: 64vw;
     max-width: 1248px;
     height: 74vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // flex-direction: row;
+    @include flex(center, center);
 
     &__information {
         width: 45vw;
@@ -261,10 +255,7 @@ li .navigation__link {
 .second-section {
     height: 110vh;
     min-height: 100vh;
-    // width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(center, center);
 
     &__container {
         width: 80vw;
@@ -272,8 +263,7 @@ li .navigation__link {
         max-height: 560px;
         background-color: rgba(240, 99, 184, .15);
         border-radius: 50px;
-        display: flex;
-        align-items: center;
+        @include flex(flex-start, center);
     }
 
     &__img {
@@ -283,24 +273,16 @@ li .navigation__link {
     }
 
     &__information {
-        // width: 38vw;
         width: 48%;
         max-width: 475px;
         height: 310px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        @include flex-with-direction(column, center, center);
     }
 
     &__title {
         @extend %subtitle;
         margin-bottom: 4vh;
     }
-
-    // &__paragraph {
-    //     margin-top: 4vh;
-    // }
 }
 
 /*--------------------------------*/
@@ -308,9 +290,7 @@ li .navigation__link {
 /*-------------------------------*/
 
 .features {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-with-direction(column, flex-start, center);
 
     &__title {
         @extend %subtitle;
@@ -325,28 +305,21 @@ li .navigation__link {
     }
 
     &__box-container {
-        width: 85vw;
-        max-width: 85vw;
-        // height: 105vh;
-        min-height: 105vh;
-        // margin-top: 2vh;
-        display: flex;
+        @include flex(space-around, stretch);
         flex-wrap: wrap;
         align-content: space-between;
-        justify-content: space-around;
+        width: 85vw;
+        max-width: 85vw;
+        min-height: 105vh;
         margin-left: 5vw;
     }
 
     &__box {
-        // width: 30vw;
+        @include flex(flex-end, flex-end);
         width: 400px;
         max-width: 558px;
-        // max-height: 366px;
         margin-left: 16px;
         padding: 30px 0 20px 0px;
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-end;
         position: relative;
     }
     
@@ -362,7 +335,8 @@ li .navigation__link {
     }
 
     &__box:nth-of-type(2) {
-        margin-top: 6px;
+        // margin-top: 6px;
+        // margin-top: -4px;
     }
     
     &__box__img {
@@ -378,7 +352,6 @@ li .navigation__link {
         margin-top: 40px;
         display: flex;
         flex-direction: column;
-        // align-content: flex-start;
     }
     
     &__box__title {
@@ -429,9 +402,7 @@ li .navigation__link {
     margin-bottom: 6vh;
     margin-top: 6vh;
     height: 110vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(center, center);
 
     &__container {
         width: 80vw;
@@ -450,9 +421,7 @@ li .navigation__link {
 
     &__content-wrapper {
         height: 76%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex(center, center);
     }
 
     &__content-container {
@@ -460,9 +429,7 @@ li .navigation__link {
         height: 63%;
         border-radius: 20px;
         box-shadow: 0px 20px 0px rgba(60, 28, 99, 0.3);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex(center, center);
     }
 
     &__content {
@@ -480,14 +447,13 @@ li .navigation__link {
         width: 76%;
         max-width: 385px;
         margin-left: 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        @include flex-with-direction(column, center, stretch);
     }
 
     &__content__title {
         font-family: $text-font;
         color: $titles-color;
+        
         font-weight: 800;
         font-size: 18px;
         line-height: 160%;
@@ -497,6 +463,7 @@ li .navigation__link {
         font-family: $text-font;
         color: $primary-color;
         text-decoration: none;
+        
         font-weight: 500;
         font-size: 14px;
         line-height: 160%;
@@ -523,23 +490,15 @@ hr {
 }
 
 .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    @include flex-with-direction(column, space-around, center);
     height: 110vh;
-    // width: 100vw;
-    // max-width: 100vw;
 
     /*---------- TOP ----------*/
 
     &__top {
-        display: flex;
+        @include flex(space-between, center);
         width: 80vw;
         max-width: 1120px;
-        // height: 101px;
-        justify-content: space-between;
-        align-items: center;
     }
 
     &__title {
@@ -549,7 +508,6 @@ hr {
 
     &__top--buttons {
         display: flex;
-        // flex-direction: row;
 
         .button--pink {
             @extend %button-purple;
@@ -573,17 +531,12 @@ hr {
         width: 80vw;
         max-width: 1120px;
         height: 45vh;
-        // justify-content: space-between;
-        // align-items: flex-start;
     }
 
     &__bottom-left {
         height: 52vh;
         min-height: 20vh;
-        // max-height: 408px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        @include flex-with-direction(column, space-between, stretch);
     }
 
     &__bottom__left-top {
@@ -621,12 +574,10 @@ hr {
     }
 
     &__bottom__info {
-        // width: 166px;
         width: 16vw;
         max-width: 166px;
         display: flex;
         flex-direction: column;
-        // align-items: flex-start;
     }
 
     &__bottom__info-title {
@@ -692,9 +643,7 @@ svg:hover {
         justify-content: flex-start;
     }
     .footer__top--buttons {
-        flex-direction: column;
-        align-items: inherit;
-        justify-content: space-between;
+        @include flex-with-direction(column, space-between, inherit);
         height: 136px;
     }
     .footer__bottom {
@@ -702,8 +651,8 @@ svg:hover {
     }
     .footer__bottom-right {
         flex-wrap: wrap;
-        width: 37vw;
         justify-content: flex-start;
+        width: 37vw;
     }
     .footer__bottom__info {
         width: 18vw;
@@ -774,8 +723,8 @@ svg:hover {
         margin-bottom: 0px;
     }
     .features__box-container {
+        @include transform(scale(.85));
         margin-left: 10vw;
-        transform: scale(.85);
         height: 183vh;
         margin-top: -6vh;
     }
@@ -833,8 +782,8 @@ svg:hover {
     }
     .footer__bottom-left {
         height: 36vh;
-        transform: scale(0.8);
         margin-left: -9vw;
+        @include transform(scale(0.8));
     }
     .footer__bottom-right {
         width: 76vw;
@@ -853,7 +802,7 @@ svg:hover {
         font-size: 2em;
     }
     .features__box-container {
-        transform: scale(0.7);
+        @include transform(scale(0.7));
         width: 100vw;
         max-width: 100vw;
         margin-top: -20vh;
@@ -932,7 +881,7 @@ svg:hover {
         height: 85%;
     }
     .testimonials__content__img {
-        transform: scale(.75);
+        @include transform(scale(.75));
     }
     .footer {
         margin-top: 7vh;

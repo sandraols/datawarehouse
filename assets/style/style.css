@@ -90,6 +90,8 @@ body {
   margin-top: 5vh;
   display: flex;
   flex-direction: column;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -140,11 +142,6 @@ li .navigation__link {
   height: 0;
   overflow: hidden;
   visibility: hidden;
-}
-
-.navigation__link::after {
-  margin-top: -1px;
-  font-size: 0;
 }
 
 /*--------------------------------*/
@@ -205,6 +202,7 @@ li .navigation__link {
   background-color: rgba(240, 99, 184, 0.15);
   border-radius: 50px;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
 }
 .second-section__img {
@@ -218,8 +216,9 @@ li .navigation__link {
   height: 310px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  display: flex;
   justify-content: center;
+  align-items: center;
 }
 .second-section__title {
   margin-bottom: 4vh;
@@ -231,6 +230,8 @@ li .navigation__link {
 .features {
   display: flex;
   flex-direction: column;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
 }
 .features__title {
@@ -243,23 +244,24 @@ li .navigation__link {
   margin-bottom: 7vh;
 }
 .features__box-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+  align-content: space-between;
   width: 85vw;
   max-width: 85vw;
   min-height: 105vh;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
-  justify-content: space-around;
   margin-left: 5vw;
 }
 .features__box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
   width: 400px;
   max-width: 558px;
   margin-left: 16px;
   padding: 30px 0 20px 0px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
   position: relative;
 }
 .features__box__background {
@@ -270,9 +272,6 @@ li .navigation__link {
 .features__box__background.purple--background {
   position: absolute;
   top: 16px;
-}
-.features__box:nth-of-type(2) {
-  margin-top: 6px;
 }
 .features__box__img {
   position: absolute;
@@ -342,8 +341,8 @@ li .navigation__link {
 .testimonials__content-wrapper {
   height: 76%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 .testimonials__content-container {
   background: #ffffff;
@@ -351,8 +350,8 @@ li .navigation__link {
   border-radius: 20px;
   box-shadow: 0px 20px 0px rgba(60, 28, 99, 0.3);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 .testimonials__content {
   padding: 3vw;
@@ -369,7 +368,9 @@ li .navigation__link {
   margin-left: 30px;
   display: flex;
   flex-direction: column;
+  display: flex;
   justify-content: center;
+  align-items: stretch;
 }
 .testimonials__content__title {
   font-family: "Lato", sans-serif;
@@ -407,18 +408,19 @@ hr {
 .footer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  display: flex;
   justify-content: space-around;
+  align-items: center;
   height: 110vh;
   /*---------- TOP ----------*/
   /*---------- BOTTOM ----------*/
 }
 .footer__top {
   display: flex;
-  width: 80vw;
-  max-width: 1120px;
   justify-content: space-between;
   align-items: center;
+  width: 80vw;
+  max-width: 1120px;
 }
 .footer__title {
   margin-bottom: 2vh;
@@ -446,7 +448,9 @@ hr {
   min-height: 20vh;
   display: flex;
   flex-direction: column;
+  display: flex;
   justify-content: space-between;
+  align-items: stretch;
 }
 .footer__bottom__left-top {
   display: flex;
@@ -534,9 +538,11 @@ svg:hover {
   }
 
   .footer__top--buttons {
+    display: flex;
     flex-direction: column;
-    align-items: inherit;
+    display: flex;
     justify-content: space-between;
+    align-items: inherit;
     height: 136px;
   }
 
@@ -546,8 +552,8 @@ svg:hover {
 
   .footer__bottom-right {
     flex-wrap: wrap;
-    width: 37vw;
     justify-content: flex-start;
+    width: 37vw;
   }
 
   .footer__bottom__info {
@@ -632,8 +638,10 @@ svg:hover {
   }
 
   .features__box-container {
-    margin-left: 10vw;
+    -webkit-transform: scale(0.85);
+    -ms-transform: scale(0.85);
     transform: scale(0.85);
+    margin-left: 10vw;
     height: 183vh;
     margin-top: -6vh;
   }
@@ -706,8 +714,10 @@ svg:hover {
 
   .footer__bottom-left {
     height: 36vh;
-    transform: scale(0.8);
     margin-left: -9vw;
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
   }
 
   .footer__bottom-right {
@@ -729,6 +739,8 @@ svg:hover {
   }
 
   .features__box-container {
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
     transform: scale(0.7);
     width: 100vw;
     max-width: 100vw;
@@ -817,6 +829,8 @@ svg:hover {
   }
 
   .testimonials__content__img {
+    -webkit-transform: scale(0.75);
+    -ms-transform: scale(0.75);
     transform: scale(0.75);
   }
 
