@@ -27,29 +27,12 @@ $text-font: 'Lato', sans-serif;
     line-height: 130%;
 }
 
-%features-title {
-    font-family: $title-font;
-    color: $titles-color;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 130%;
-    margin-bottom: 20px;
-}
-
 %paragraph {
     font-family: $text-font;
     font-weight: 400;
     color: $text-color;
     line-height: 160%;
     font-size: 18px;
-}
-
-%footer-text {
-    font-family: $text-font;
-    color: $titles-color;
-    font-size: 16px;
-    line-height: 180%;
-    letter-spacing: 0.01em;
 }
 
 %button {
@@ -88,8 +71,16 @@ $text-font: 'Lato', sans-serif;
 }
 
 button:hover {
-    @extend %button;
     transform: scale(1.1);
+}
+
+.button--light {
+    @extend %button-light;
+    margin-left: 30px;
+}
+
+.button--purple {
+    @extend %button-purple
 }
 
 @mixin transform($property) {
@@ -183,10 +174,6 @@ li {
         overflow: hidden;
         visibility: hidden;
     }
-
-    .button--light {
-        @extend %button-light;
-    }
 }
 
 
@@ -229,10 +216,6 @@ li {
         position: relative;
         top: 20vh;
         left: 34vw;
-    }
-
-    .button--purple {
-        @extend %button-purple;
     }
 
     .button--purple:hover {
@@ -347,11 +330,15 @@ li {
     }
     
     .features__box__title {
-        @extend %features-title;
+        font-family: $title-font;
+        color: $titles-color;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 130%;
+        margin-bottom: 20px;
     }
-    
+  
     .features__box__paragraph {
-        @extend %paragraph;
         width: 220px;
         height: 150px;
         min-height: 100px;
@@ -361,7 +348,6 @@ li {
     }
     
     .features__box__link {
-        @extend %paragraph;
         color: $titles-color;
         font-size: 16px;
         font-weight: 900;
@@ -511,13 +497,9 @@ hr {
     display: flex;
 
     .button--pink {
-        @extend %button-purple;
         background-color: $secondary-color;
     }
-    .button--light {
-        @extend %button-light;
-        margin-left: 30px;
-    }
+
     .button--pink:hover {
         background-color: rgb(212, 74, 157);
     }
@@ -545,23 +527,24 @@ hr {
 }
 
 .footer__bottom__left-title {
-    @extend %subtitle;
     font-size: 20px;
     margin-left: 20px;
 }
 
-.footer__bottom__left-adress {
-    @extend %footer-text;
+.footer--text {
+    font-family: $text-font;
+    color: $titles-color;
+    font-size: 16px;
+    line-height: 180%;
+    letter-spacing: 0.01em;
 }
 
 .footer__bottom__left-contact {
-    @extend %footer-text;
     font-weight: 300;
     margin-top: 10px;
 }
 
 .footer__bottom__left-copy {
-    @extend %footer-text;
     font-weight: 300;
     font-size: 12px;
     margin-top: 6vh;
@@ -580,7 +563,6 @@ hr {
     flex-direction: column;
 }
 .footer__bottom__info-title {
-    @extend %footer-text;
     font-weight: 700;
     line-height: 160%;
     margin-bottom: 30px;
@@ -598,7 +580,6 @@ hr {
 }
 
 .footer__bottom__info-link {
-    @extend %footer-text;
     text-decoration: none;
     line-height: 250%;
     font-weight: 300;
