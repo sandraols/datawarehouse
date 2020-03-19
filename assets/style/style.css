@@ -4,13 +4,13 @@
   box-sizing: border-box;
 }
 
-.intro__title, .footer__bottom__left-title, .footer__title, .testimonials__title, .features__title, .second-section__title {
+.intro__title, .footer__bottom__left-title, .subtitle {
   font-family: helvetica, sans-serif;
   color: #212353;
   font-weight: 700;
 }
 
-.footer__bottom__left-title, .footer__title, .testimonials__title, .features__title, .second-section__title {
+.footer__bottom__left-title, .subtitle {
   font-size: 40px;
   font-size: 2.5em;
   line-height: 130%;
@@ -485,7 +485,7 @@ hr {
   padding: 10vh 0 6vh 0;
 }
 
-.footer__bottom-left {
+.footer__bottom__left {
   height: 348px;
   min-height: 20vh;
   display: flex;
@@ -516,7 +516,7 @@ hr {
   margin-top: 6vh;
 }
 
-.footer__bottom-right {
+.footer__bottom__right {
   display: flex;
   width: 60vw;
   justify-content: flex-end;
@@ -599,7 +599,7 @@ svg:hover {
     justify-content: space-between;
   }
 
-  .footer__bottom-right {
+  .footer__bottom__right {
     flex-wrap: wrap;
     justify-content: flex-start;
     width: 37vw;
@@ -625,6 +625,10 @@ svg:hover {
 
   .intro {
     height: 79vh;
+  }
+
+  .subtitle {
+    font-size: 2em;
   }
 
   .second-section {
@@ -667,7 +671,7 @@ svg:hover {
   }
 
   .testimonials__content-box {
-    padding: 5vw;
+    padding: 7vw;
   }
 
   .testimonials__top-container {
@@ -682,10 +686,6 @@ svg:hover {
 
   .testimonials__name-container {
     margin-left: 0;
-  }
-
-  .testimonials__title {
-    font-size: 2em;
   }
 }
 @media screen and (max-width: 414px) {
@@ -711,11 +711,6 @@ svg:hover {
     bottom: 20%;
   }
 
-  .features__title {
-    margin-bottom: 2vh;
-    font-size: 2em;
-  }
-
   .features__paragraph {
     margin-bottom: 0px;
   }
@@ -739,10 +734,6 @@ svg:hover {
     text-align: center;
   }
 
-  .footer__title {
-    font-size: 2em;
-  }
-
   .footer__top__buttons .button--light {
     margin-left: 0px;
   }
@@ -752,7 +743,7 @@ svg:hover {
     padding: 0;
   }
 
-  .footer__bottom-left {
+  .footer__bottom__left {
     margin-left: -9vw;
     -webkit-transform: scale(0.8);
     -ms-transform: scale(0.8);
@@ -763,7 +754,7 @@ svg:hover {
     margin-top: 0vh;
   }
 
-  .footer__bottom-right {
+  .footer__bottom__right {
     width: 76vw;
     justify-content: space-between;
   }
@@ -775,10 +766,6 @@ svg:hover {
 @media screen and (max-width: 375px) {
   .second-section {
     height: 83vh;
-  }
-
-  .second-section__title {
-    font-size: 2em;
   }
 
   .features__box-container {

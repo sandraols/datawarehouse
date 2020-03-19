@@ -127,6 +127,10 @@ li {
     @extend %paragraph;
 }
 
+.subtitle {
+    @extend %subtitle;
+}
+
 /*--------------------------------*/
 /* HEADER */
 /*-------------------------------*/
@@ -269,7 +273,6 @@ li {
     }
 
     &__title {
-        @extend %subtitle;
         margin-bottom: 4vh;
     }
 }
@@ -283,7 +286,6 @@ li {
 }
 
 .features__title {
-    @extend %subtitle;
     margin-bottom: 4vh;
 }
 
@@ -403,7 +405,6 @@ li {
 }
 
 .testimonials__title {
-    @extend %subtitle;
     color: $light-color;
 }
 
@@ -503,7 +504,6 @@ hr {
     }
 
 .footer__title {
-    @extend %subtitle;
     margin-bottom: 2vh;
 }
 
@@ -533,7 +533,7 @@ hr {
     padding: 10vh 0 6vh 0;
 }
 
-.footer__bottom-left {
+.footer__bottom__left {
     height: 348px;
     min-height: 20vh;
     @include flex-with-direction(column, space-between, stretch);
@@ -567,7 +567,7 @@ hr {
     margin-top: 6vh;
 }
 
-.footer__bottom-right {
+.footer__bottom__right {
     display: flex;
     width: 60vw;
     justify-content: flex-end;
@@ -579,7 +579,6 @@ hr {
     display: flex;
     flex-direction: column;
 }
-
 .footer__bottom__info-title {
     @extend %footer-text;
     font-weight: 700;
@@ -609,6 +608,7 @@ hr {
     color: $primary-color;
     text-decoration: underline;
 }
+
 
 svg {
     height: 50px;
@@ -646,7 +646,7 @@ svg:hover {
     .footer__bottom {
         justify-content: space-between;
     }
-    .footer__bottom-right {
+    .footer__bottom__right {
         flex-wrap: wrap;
         justify-content: flex-start;
         width: 37vw;
@@ -669,6 +669,9 @@ svg:hover {
     }
     .intro {
         height: 79vh;
+    }
+    .subtitle {
+        font-size: 2em;
     }
     .second-section {
         height: 76vh;
@@ -702,7 +705,7 @@ svg:hover {
         padding: 5vw;
     }
     .testimonials__content-box {
-        padding: 5vw;
+        padding: 7vw;
     }
     .testimonials__top-container {
         flex-direction: row-reverse;
@@ -714,9 +717,6 @@ svg:hover {
     }
     .testimonials__name-container {
         margin-left: 0;
-    }
-    .testimonials__title {
-        font-size: 2em;
     }
 }
 
@@ -738,10 +738,6 @@ svg:hover {
         right: -10%;
         bottom: 20%;
     }
-    .features__title {
-        margin-bottom: 2vh;
-        font-size: 2em;
-    }
     .features__paragraph {
         margin-bottom: 0px;
     }
@@ -759,9 +755,6 @@ svg:hover {
     .footer__top__text {
         text-align: center;
     }
-    .footer__title {
-        font-size: 2em;
-    }
     .footer__top__buttons .button--light {
         margin-left: 0px;
     }
@@ -769,14 +762,14 @@ svg:hover {
         flex-direction: column-reverse;
         padding: 0;
     }
-    .footer__bottom-left {
+    .footer__bottom__left {
         margin-left: -9vw;
         @include transform(scale(0.8));
     }
     .footer__bottom__left-copy {
         margin-top: 0vh;
     }
-    .footer__bottom-right {
+    .footer__bottom__right {
         width: 76vw;
         justify-content: space-between;
     }
@@ -788,9 +781,6 @@ svg:hover {
 @media screen and (max-width: 375px) {
     .second-section {
         height: 83vh;
-    }
-    .second-section__title {
-        font-size: 2em;
     }
     .features__box-container {
         @include transform(scale(0.7));
